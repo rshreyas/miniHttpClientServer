@@ -91,5 +91,10 @@ class Server:
 
 
 if __name__ == '__main__':
-    server = Server()
+    port_no = int(input("Enter Server Port "))
+    if not port_no:
+        port_no = 8080
+        print("Using default port number: 8080")
+
+    server = Server(port_no = port_no)
     server.listen_for_clients()
